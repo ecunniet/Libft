@@ -6,7 +6,7 @@
 /*   By: ecunniet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 16:35:22 by ecunniet          #+#    #+#             */
-/*   Updated: 2016/11/09 21:47:14 by ecunniet         ###   ########.fr       */
+/*   Updated: 2016/11/10 15:00:45 by ecunniet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	int i;
-	int j;
+	size_t i;
+	size_t j;
 
 	j = 0;
 	i = 0;

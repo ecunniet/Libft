@@ -6,7 +6,7 @@
 /*   By: ecunniet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 17:14:54 by ecunniet          #+#    #+#             */
-/*   Updated: 2016/11/09 17:36:14 by ecunniet         ###   ########.fr       */
+/*   Updated: 2016/11/10 13:53:07 by ecunniet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,29 @@
 
 char	*ft_strstr(const char *big, const char *little)
 {
-	int i;
-	int j;
-	int z;
+	int		tab[3];
+	void	*ptr;
 
-	z = 0;
-	i = 0;
-	j = 0;
-	while (little[i] != '\0')
-		i++;
-	if (i == 0)
-		return (big);
-	while (big[j] != '\0')
+	ptr = &big;
+	tab[0] = 0;
+	tab[1] = 0;
+	tab[2] = 0;
+	while (little[tab[0]] != '\0')
+		tab[0]++;
+	if (tab[0] == 0)
+		return (ptr);
+	while (big[tab[1]] != '\0')
 	{
-		if (big[j] == little[z])
+		if (big[tab[1]] == little[tab[2]])
 		{
-			while (big[j + z] == little[z] && z == i)
-				z++;
-			if (z == i)
-				return (big + j);
+			while (big[tab[1] + tab[2]] == little[tab[2]] && tab[2] == tab[0])
+				tab[2]++;
+			if (tab[2] == tab[0])
+				return (ptr + tab[1]);
 			else
-				z = 0;
+				tab[2] = 0;
 		}
-		j++;
+		tab[1]++;
 	}
 	return (NULL);
 }
