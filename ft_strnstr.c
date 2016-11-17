@@ -6,37 +6,35 @@
 /*   By: ecunniet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 17:40:24 by ecunniet          #+#    #+#             */
-/*   Updated: 2016/11/10 15:01:55 by ecunniet         ###   ########.fr       */
+/*   Updated: 2016/11/16 13:08:39 by ecunniet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 {
-	size_t	tab[3];
-	void	*ptr;
+	size_t	i;
+	size_t	j;
+	size_t	z;
 
-	ptr = &big;
-	tab[0] = 0;
-	tab[1] = ft_strlen(little);
-	tab[2] = 0;
-	if (tab[1] == 0)
-		return (ptr);
-	if (tab[1] < len)
-		len = tab[1];
-	while (big[tab[2]] != '\0')
+	i = 0;
+	j = ft_strlen(s2);
+	z = 0;
+	if (j == 0)
+		return ((char*)s1);
+	while (s1[z] != '\0' && z < len)
 	{
-		if (big[tab[2]] == little[tab[0]])
+		if (s1[z] == s2[i])
 		{
-			while (big[tab[2] + tab[0]] == little[tab[0]] && tab[0] < len)
-				tab[0]++;
-			if (tab[0] == len)
-				return (ptr + tab[2]);
+			while (s1[z + i] == s2[i] && i < j && z + i < len)
+				i++;
+			if (i == j)
+				return ((char*)(s1 + z));
 			else
-				tab[0] = 0;
+				i = 0;
 		}
-		tab[2]++;
+		z++;
 	}
 	return (NULL);
 }

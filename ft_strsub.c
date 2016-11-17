@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecunniet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/09 17:08:32 by ecunniet          #+#    #+#             */
-/*   Updated: 2016/11/16 12:21:16 by ecunniet         ###   ########.fr       */
+/*   Created: 2016/11/12 19:54:02 by ecunniet          #+#    #+#             */
+/*   Updated: 2016/11/16 14:41:16 by ecunniet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	int		i;
+	char	*str;
+	size_t	i;
 
 	i = 0;
-	while (s[i] != '\0')
-		i++;
-	while (i)
+	if (!(str = (char*)malloc(sizeof(char) * (len + 1))))
+		return (NULL);
+	while (i < len)
 	{
-		if (s[i] == ((char)c))
-			return ((char*)(s + i));
-		i--;
+		str[i] = s[start + i];
+		i++;
 	}
-	return (NULL);
+	str[i] = '\0';
+	return (str);
 }
