@@ -6,7 +6,7 @@
 /*   By: ecunniet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/12 19:38:31 by ecunniet          #+#    #+#             */
-/*   Updated: 2016/11/14 12:21:37 by ecunniet         ###   ########.fr       */
+/*   Updated: 2016/11/22 16:26:19 by ecunniet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int		ft_strequ(char const *s1, char const *s2)
 {
+	if (s1 == NULL || s2 == NULL)
+		return (0);
 	if (ft_strcmp(s1, s2) == 0)
 		return (1);
 	return (0);

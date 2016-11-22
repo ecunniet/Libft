@@ -6,7 +6,7 @@
 /*   By: ecunniet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/12 19:54:02 by ecunniet          #+#    #+#             */
-/*   Updated: 2016/11/16 14:41:16 by ecunniet         ###   ########.fr       */
+/*   Updated: 2016/11/22 16:28:43 by ecunniet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	size_t	i;
 
 	i = 0;
+	if (s == NULL)
+		return (NULL);
 	if (!(str = (char*)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	while (i < len)

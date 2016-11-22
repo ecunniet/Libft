@@ -6,7 +6,7 @@
 /*   By: ecunniet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/12 17:23:02 by ecunniet          #+#    #+#             */
-/*   Updated: 2016/11/16 14:27:00 by ecunniet         ###   ########.fr       */
+/*   Updated: 2016/11/22 16:07:08 by ecunniet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_strclr(char *s)
 {
 	int i;
 
+	if (s == NULL)
+		return ;
 	i = ft_strlen(s);
 	while (i >= 0)
 		s[i--] = '\0';

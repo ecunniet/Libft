@@ -6,7 +6,7 @@
 /*   By: ecunniet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/12 17:00:41 by ecunniet          #+#    #+#             */
-/*   Updated: 2016/11/16 14:28:31 by ecunniet         ###   ########.fr       */
+/*   Updated: 2016/11/22 16:05:05 by ecunniet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 void	ft_strdel(char **as)
 {
+	if (as == NULL)
+		return ;
 	ft_memdel((void**)as);
 }

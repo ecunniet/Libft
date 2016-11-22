@@ -6,7 +6,7 @@
 /*   By: ecunniet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/12 17:34:12 by ecunniet          #+#    #+#             */
-/*   Updated: 2016/11/12 17:39:14 by ecunniet         ###   ########.fr       */
+/*   Updated: 2016/11/22 16:12:40 by ecunniet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_striter(char *s, void (*f)(char *))
 	int j;
 
 	j = 0;
+	if (s == NULL || f == NULL)
+		return ;
 	while (s[j] != '\0')
 		f(s + (j++));
 }

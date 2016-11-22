@@ -6,7 +6,7 @@
 /*   By: ecunniet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/12 21:12:30 by ecunniet          #+#    #+#             */
-/*   Updated: 2016/11/16 16:47:58 by ecunniet         ###   ########.fr       */
+/*   Updated: 2016/11/22 16:30:23 by ecunniet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int		ft_countword(char const *s, char c)
 
 	i = 0;
 	j = 0;
-	while (i <= ft_strlen(s))
+	while (i < ft_strlen(s))
 	{
 		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
 			j++;
@@ -82,6 +82,8 @@ char			**ft_strsplit(char const *s, char c)
 
 	i = 0;
 	j = 1;
+	if (s == NULL)
+		return (NULL);
 	nword = ft_countword(s, c);
 	if (!(str = (char**)malloc(sizeof(char*) * (nword + 1))))
 		return (NULL);

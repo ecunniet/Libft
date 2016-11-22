@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstaddend.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecunniet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/17 20:15:37 by ecunniet          #+#    #+#             */
-/*   Updated: 2016/11/17 20:42:29 by ecunniet         ###   ########.fr       */
+/*   Created: 2016/11/22 13:28:20 by ecunniet          #+#    #+#             */
+/*   Updated: 2016/11/22 14:20:35 by ecunniet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void				*ft_memmove(void *dst, const void *src, size_t len)
+void	ft_lstaddend(t_list **alst, t_list *new)
 {
-	if (src < dst && (src + len) > dst)
+	t_list *tmp;
+
+	tmp = *alst;
+	if (*alst == NULL)
 	{
-		while (len > 0)
-		{
-			((unsigned char*)dst)[len - 1] = ((unsigned char*)src)[len - 1];
-			len--;
-		}
-		return (dst);
+		*alst = new;
+		return ;
 	}
-	if (src == dst)
-		return (dst);
-	ft_memcpy(dst, src, len);
-	return (dst);
+	while ((*alst)->next != NULL)
+		*alst = (*alst)->next;
+	(*alst)->next = new;
+	*alst = tmp;
 }

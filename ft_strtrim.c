@@ -6,7 +6,7 @@
 /*   By: ecunniet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/12 20:27:50 by ecunniet          #+#    #+#             */
-/*   Updated: 2016/11/16 15:17:18 by ecunniet         ###   ########.fr       */
+/*   Updated: 2016/11/22 16:32:15 by ecunniet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strtrim(char const *s)
 	int		z;
 	char	*str;
 
+	if (s == NULL)
+		return (NULL);
 	j = ft_strlen(s) - 1;
 	i = 0;
 	z = 0;
