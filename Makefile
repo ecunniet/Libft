@@ -6,7 +6,7 @@
 #    By: ecunniet <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 12:32:58 by ecunniet          #+#    #+#              #
-#    Updated: 2016/11/22 13:31:28 by ecunniet         ###   ########.fr        #
+#    Updated: 2016/12/09 17:07:15 by ecunniet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,8 @@ SRC = ft_memset.c ft_bzero.c ft_memcpy.c \
 	  ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
 	  ft_putnbr_fd.c ft_lstnew.c ft_lstdelone.c \
 	  ft_lstdel.c ft_lstadd.c ft_lstiter.c \
-	  ft_lstmap.c ft_isspace.c ft_lstaddend.c
+	  ft_lstmap.c ft_isspace.c ft_lstaddend.c \
+	  ft_strjoin_free.c
 
 OBJ = $(SRC:.c=.o)
 

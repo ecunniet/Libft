@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin_free.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecunniet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/12 19:54:02 by ecunniet          #+#    #+#             */
-/*   Updated: 2016/12/09 20:22:40 by ecunniet         ###   ########.fr       */
+/*   Created: 2016/12/09 16:58:24 by ecunniet          #+#    #+#             */
+/*   Updated: 2016/12/09 20:05:41 by ecunniet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+char	*ft_strjoin_free(char const *s1, char const *s2, int k)
 {
 	char	*str;
-	size_t	i;
+	int		i;
+	int		j;
 
-	i = 0;
-	if (s == NULL)
+	if (s1 == NULL || s2 == NULL || k < 0 || k > 3)
 		return (NULL);
-	if (!(str = (char*)malloc(sizeof(char) * (len + 1))))
+	i = ft_strlen(s1);
+	j = ft_strlen(s2);
+	if (!(str = (char*)malloc(sizeof(char) * (i + j + 1))))
 		return (NULL);
-	while (i < len)
+	str = ft_strcpy(str, s1);
+	str = ft_strcat(str, s2);
+	if (k == 1)
+		free((void*)s1);
+	if (k == 2)
+		free((void*)s2);
+	if (k == 3)
 	{
-		str[i] = s[start + i];
-		i++;
+		free((void*)s1);
+		free((void*)s2);
 	}
-	str[i] = '\0';
 	return (str);
 }
