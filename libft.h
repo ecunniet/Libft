@@ -6,13 +6,14 @@
 /*   By: ecunniet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 23:20:55 by ecunniet          #+#    #+#             */
-/*   Updated: 2016/12/09 20:04:40 by ecunniet         ###   ########.fr       */
+/*   Updated: 2016/12/12 19:21:26 by ecunniet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <string.h>
+# include "get_next_line.h"
 
 typedef struct		s_list
 {
